@@ -14,16 +14,15 @@ class AlbumsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            drawer: FlutterSocialAppDrawer(),
-            appBar: AppBar(
-                backgroundColor: Colors.blue, title: const Text("Album")),
-            body: ListView.builder(itemBuilder: (_, index) {
-              return AlbumWidget(
-                  user: User(1, "Josef Bratan", "jozek", "email@moje.pl"),
-                  album: Album(1, 1, "Tytul Albumu"),
-                  photo: Photo(1, 1, "thumbnail", "url", "Tytul Zdjecia"));
-            })));
-  }
-}
+    return Scaffold(
+        drawer: FlutterSocialAppDrawer(),
+    appBar: AppBar(
+    backgroundColor: Colors.blue, title: const Text("Album")),
+    body: AlbumWidget(
+    user: User(1, "Josef Bratan", "jozek", "email@moje.pl"),
+    album: Album(1, 1, "Tytul Albumu"),
+    photo: Photo(1, 1, "thumbnail", "url", "Tytul Zdjecia"))
+    
+
+  );
+}}

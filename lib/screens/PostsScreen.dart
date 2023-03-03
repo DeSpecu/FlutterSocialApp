@@ -11,8 +11,7 @@ class PostsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
             drawer: FlutterSocialAppDrawer(),
             appBar: AppBar(
                 backgroundColor: Colors.blue, title: const Text("Posty")),
@@ -22,7 +21,6 @@ class PostsScreen extends StatelessWidget {
                       "Tresc posta lorem impsum i te sprawy"),
                   user: User(1, "Josef Bratan", "jozek", "email@moje.pl"));
             })
-        )
-    );
+        );
   }
 }

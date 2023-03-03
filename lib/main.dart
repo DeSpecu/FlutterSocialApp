@@ -1,13 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:projekt_zaliczeniowy/screens/PhotosScreen.dart';
 import 'package:projekt_zaliczeniowy/screens/PostsScreen.dart';
-import 'dart:io';
 
-import 'package:projekt_zaliczeniowy/widgets/PostVisual.dart';
-import 'package:projekt_zaliczeniowy/widgets/PostWidget.dart';
-import 'package:projekt_zaliczeniowy/model/Post.dart';
-import 'package:projekt_zaliczeniowy/model/User.dart';
-import 'package:projekt_zaliczeniowy/widgets/Drawer.dart';
 
 Color randomColor() {
   var generatedColor = Random().nextInt(Colors.primaries.length);
@@ -15,8 +10,12 @@ Color randomColor() {
 }
 
 void main() {
-  runApp(const MaterialApp(
-    home: PostsScreen()
+  runApp(MaterialApp(
+    routes: {
+      "/": (context) => const PostsScreen(),
+      "/photos" : (context) => const PhotoScreen(),
+      "/album" : (context) => const PhotoScreen()
+    },
   ));
 }
 
