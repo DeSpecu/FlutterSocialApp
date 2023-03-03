@@ -1,12 +1,14 @@
 class Photo{
-  final int? id;
-  final int? albumId;
-  final String? url;
-  final String? thumnail;
+  final int id;
+  final int albumId;
+  final String title;
+  final String url;
+  final String thumnail;
   Photo(
       this.id,
       this.albumId,
       this.thumnail,
-      this.url
+      this.url,
+      this.title
       );
 }

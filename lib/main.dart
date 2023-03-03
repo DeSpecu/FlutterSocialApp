@@ -1,8 +1,13 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:projekt_zaliczeniowy/screens/PostsScreen.dart';
 import 'dart:io';
 
-import 'package:projekt_zaliczeniowy/Widgets/PostVisual.dart';
+import 'package:projekt_zaliczeniowy/widgets/PostVisual.dart';
+import 'package:projekt_zaliczeniowy/widgets/PostWidget.dart';
+import 'package:projekt_zaliczeniowy/model/Post.dart';
+import 'package:projekt_zaliczeniowy/model/User.dart';
+import 'package:projekt_zaliczeniowy/widgets/Drawer.dart';
 
 Color randomColor() {
   var generatedColor = Random().nextInt(Colors.primaries.length);
@@ -10,24 +15,9 @@ Color randomColor() {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    home: PostsScreen()
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar:
-                AppBar(backgroundColor: Colors.blue, title: const Text("Tak")),
-            body: ListView.builder(itemBuilder: (_, index) {
-              return PostVisual();
-            }
-            )
-        )
-    );
-  }
-}

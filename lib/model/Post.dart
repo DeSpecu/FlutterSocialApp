@@ -1,8 +1,8 @@
 class Post{
-  final int? id;
-  final int? userId;
-  final String? title;
-  final String? body;
+  final int id;
+  final int userId;
+  final String title;
+  final String body;
   Post(
       this.id,
       this.userId,
