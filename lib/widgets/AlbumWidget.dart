@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:projekt_zaliczeniowy/model/Post.dart';
-import 'package:projekt_zaliczeniowy/screens/PhotosScreen.dart';
 import 'package:projekt_zaliczeniowy/widgets/UserWidget.dart';
-import '../main.dart';
+
 import '../model/Album.dart';
 import '../model/Photo.dart';
 import '../model/User.dart';
