@@ -16,7 +16,7 @@ class PhotoWidget extends StatelessWidget {
       padding: EdgeInsets.all(16),
       child: Card(
         elevation: 16,
-        shape: Shape,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
