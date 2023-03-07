@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:projekt_zaliczeniowy/screens/PhotosScreen.dart';
 import 'package:projekt_zaliczeniowy/screens/PostsScreen.dart';
-
+import '../model/Post.dart';
 
 Color randomColor() {
   var generatedColor = Random().nextInt(Colors.primaries.length);
@@ -12,7 +12,7 @@ Color randomColor() {
 void main() {
   runApp(MaterialApp(
     routes: {
-      "/": (context) => const PostsScreen(),
+      "/": (context) => PostsScreen(),
       "/photos" : (context) => const PhotoScreen(),
       "/album" : (context) => const PhotoScreen()
     },

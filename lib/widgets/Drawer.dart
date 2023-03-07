@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projekt_zaliczeniowy/screens/AlbumsScreen.dart';
 import 'package:projekt_zaliczeniowy/screens/PostsScreen.dart';
-
+import '../model/Post.dart';
 import '../main.dart';
 
 class FlutterSocialAppDrawer extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -15,7 +16,7 @@ class FlutterSocialAppDrawer extends StatelessWidget {
           title: Text("Posty", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary)),
           onTap: () => {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const PostsScreen()))
+                MaterialPageRoute(builder: (context) => PostsScreen()))
           },
         ),
         ListTile(

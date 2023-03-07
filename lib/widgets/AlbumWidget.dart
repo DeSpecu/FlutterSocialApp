@@ -52,3 +52,4 @@ class AlbumWidget extends StatelessWidget {
         ));
   }
 }
+
