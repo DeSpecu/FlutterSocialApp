@@ -29,6 +29,13 @@
             {
               "client_id": "773854419920-kfbiknlpbjfbeng8d7ji91uh3n54nghl.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "773854419920-772vjem37c7rhsdb8vse2nptfn58u2ps.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.projektZaliczeniowy"
+              }
             }
           ]
         }
