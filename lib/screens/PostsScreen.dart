@@ -10,7 +10,6 @@ class PostsScreen extends StatelessWidget {
   PostsScreen({super.key});
 
   late Future<List<Post>> futurePost = Post.fetchPost();
-  late Future<List<Post>> futurePost2 = Post.fetchPost();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,8 @@ class PostsScreen extends StatelessWidget {
                         snapshot.data![index].id,
                         snapshot.data![index].userId,
                         snapshot.data![index].title,
-                        snapshot.data![index].body),
+                        snapshot.data![index].body,
+                        snapshot.data![index].user),
                     user: User(1, "Josef Bratan", "jozek", "email@moje.pl"));
               });
             } else if (snapshot.hasError) {

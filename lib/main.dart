@@ -21,7 +21,7 @@ Future<void> main() async {
 
   runApp(MaterialApp(
     routes: {
-      "/": (context) => const LoginPage(),
+      "/": (context) => PostsScreen(),
       "/posts": (context) => PostsScreen(),
       "/photos" : (context) => const PhotoScreen(),
       "/album" : (context) => const PhotoScreen()

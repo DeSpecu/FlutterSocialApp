@@ -20,7 +20,7 @@ class PostWidget extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(16),
-              child: UserWidget(user: user)
+              child: UserWidget(post: post)
             ),
             Padding(
               padding: EdgeInsets.all(16),

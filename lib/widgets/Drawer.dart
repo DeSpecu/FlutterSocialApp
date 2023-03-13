@@ -23,7 +23,7 @@ class FlutterSocialAppDrawer extends StatelessWidget {
           title: Text("Albums", style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),),
           onTap: () => {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const AlbumsScreen()))
+                MaterialPageRoute(builder: (context) => AlbumsScreen()))
           },
         ),
       ],)
