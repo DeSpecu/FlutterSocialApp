@@ -1,45 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:projekt_zaliczeniowy/model/Album.dart';
 import 'package:projekt_zaliczeniowy/model/Photo.dart';
-import 'package:projekt_zaliczeniowy/widgets/AlbumWidget.dart';
 
-import '../model/Post.dart';
-import '../model/User.dart';
 import '../widgets/Drawer.dart';
-import '../widgets/PostWidget.dart';
+import '../widgets/PhotoWidget.dart';
 
 class AlbumsScreen extends StatelessWidget {
-  late Future<List<Post>> futurePost = Post.fetchPost();
+  late Future<List<Photo>> futurePhoto = Photo.fetchPhoto();
+
   AlbumsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         drawer: FlutterSocialAppDrawer(),
-    appBar: AppBar(
-    backgroundColor: Colors.blue, title: const Text("Album")),
-    body: Center(
-      child: FutureBuilder(future: futurePost,
-          builder: (context, snapshot){
-            if(snapshot.hasData) {
-              return AlbumWidget(
-                  album: Album(1, 1, "Tytul Albumu"),
-                  photo: Photo(1, 1, "thumbnail", "url", "Tytul Zdjecia"),
-                  post: Post(snapshot.data![0].id,
-                      snapshot.data![0].userId,
-                      snapshot.data![0].title,
-                      snapshot.data![0].body,
-                      snapshot.data![0].user)
-              );
-            }
-            else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
-            }
-            return const CircularProgressIndicator();
-          }),
-    )
+        appBar:
+            AppBar(backgroundColor: Colors.blue, title: const Text("Albums")),
+        body: Center(
+            child: FutureBuilder<List<Photo>>(
+                future: futurePhoto,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(itemBuilder: (context, index) {
+                      return PhotoWidget(
+                          photo: Photo(
+                              snapshot.data![index].albumId,
+                              snapshot.data![index].id,
+                              snapshot.data![index].title,
+                              snapshot.data![index].url,
+                              snapshot.data![index].thumbnailUrl,
+                              snapshot.data![index].album));
+                    });
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
 
-  );
-}}
+                  // By default, show a loading spinner.
+                  return const CircularProgressIndicator();
+                })));
+  }
+}

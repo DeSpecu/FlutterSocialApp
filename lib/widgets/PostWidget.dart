@@ -6,10 +6,9 @@ import '../main.dart';
 import '../model/User.dart';
 
 class PostWidget extends StatelessWidget {
-  User user;
   Post post;
 
-  PostWidget({required this.user, required this.post});
+  PostWidget({required this.post});
 
   @override
   Widget build(BuildContext context) {

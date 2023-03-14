@@ -9,10 +9,9 @@ import '../model/User.dart';
 
 class AlbumWidget extends StatelessWidget {
   Album album;
-  Photo photo;
   Post post;
 
-  AlbumWidget({required this.album, required this.photo, required this.post});
+  AlbumWidget({required this.album, required this.post});
 
   @override
   Widget build(BuildContext context) {

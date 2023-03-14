@@ -25,7 +25,7 @@ class User {
       final result = json.decode(response.body);
       return User.fromJson(result);
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load user');
     }
   }
 }

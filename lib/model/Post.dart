@@ -20,11 +20,10 @@ class Post {
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     if (response.statusCode == 200) {
-      int i =0;
       final List result = json.decode(response.body);
       return result.map((x) => Post.fromJson(x, x['userId'])).toList();
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load post');
     }
   }
 }

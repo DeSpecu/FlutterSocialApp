@@ -29,7 +29,7 @@ class PostsScreen extends StatelessWidget {
                         snapshot.data![index].title,
                         snapshot.data![index].body,
                         snapshot.data![index].user),
-                    user: User(1, "Josef Bratan", "jozek", "email@moje.pl"));
+                    );
               });
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');

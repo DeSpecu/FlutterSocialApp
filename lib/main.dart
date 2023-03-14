@@ -23,8 +23,8 @@ Future<void> main() async {
     routes: {
       "/": (context) => PostsScreen(),
       "/posts": (context) => PostsScreen(),
-      "/photos" : (context) => const PhotoScreen(),
-      "/album" : (context) => const PhotoScreen()
+      "/photos" : (context) => PhotoScreen(),
+      "/album" : (context) => PhotoScreen()
     },
   ));
 }
