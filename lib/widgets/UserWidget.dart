@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../model/Post.dart';
+import '../model/User.dart';
 
 class UserWidget extends StatelessWidget {
-  Post post;
-  UserWidget({required this.post});
+  Future<User> user;
+  UserWidget({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class UserWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        FutureBuilder(future: post.user,
+        FutureBuilder(future: user,
           builder: (context, snapshot){
             if(snapshot.hasData){
               return Column(

@@ -8,23 +8,22 @@ class Photo {
   String title;
   String url;
   String thumbnailUrl;
-  Future<Album> album;
 
   Photo(
-      this.albumId, this.id, this.title, this.url, this.thumbnailUrl, this.album);
+      this.albumId, this.id, this.title, this.url, this.thumbnailUrl);
 
-  factory Photo.fromJson(Map<String, dynamic> json, int albumId) {
+  factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(json['albumId'], json['id'], json['title'], json['url'],
-        json['thumbnailUrl'], Album.fetchAlbum(albumId));
+        json['thumbnailUrl']);
   }
 
-  static Future<List<Photo>> fetchPhoto() async {
+  static Future<List<Photo>> fetchPhotosFromAlbum(albumid) async {
     final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/photos?albumId=$albumid'));
 
     if (response.statusCode == 200) {
       final List result = json.decode(response.body);
-      return result.map((x) => Photo.fromJson(x, x['albumId'])).toList();
+      return result.map((x) => Photo.fromJson(x)).toList();
     } else {
       throw Exception('Failed to load photo');
     }

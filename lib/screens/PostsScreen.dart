@@ -21,7 +21,9 @@ class PostsScreen extends StatelessWidget {
           future: futurePost,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return ListView.builder(itemBuilder: (context, index) {
+              return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
                 return PostWidget(
                     post: Post(
                         snapshot.data![index].id,

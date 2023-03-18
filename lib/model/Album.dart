@@ -13,13 +13,13 @@ class Album {
     return Album(json['userId'], json['id'], json['title']);
   }
 
-  static Future<Album> fetchAlbum(int id) async {
+  static Future<List<Album>> fetchAlbums() async {
     final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'));
+        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/'));
 
     if (response.statusCode == 200) {
-      final result = json.decode(response.body);
-      return Album.fromJson(result);
+      final List result = json.decode(response.body);
+      return result.map((x) => Album.fromJson(x)).toList();
     } else {
       throw Exception('Failed to load album');
     }
