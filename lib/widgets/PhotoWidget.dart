@@ -4,10 +4,9 @@ import '../model/Album.dart';
 import '../model/Photo.dart';
 
 class PhotoWidget extends StatelessWidget {
-  Album album;
   Photo photo;
 
-  PhotoWidget({required this.album, required this.photo});
+  PhotoWidget({required this.photo});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class PhotoWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15),
-            Image.network('https://via.placeholder.com/600/24f355')
+            Image.network(photo.url)
           ],
         ),
       ),

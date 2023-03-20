@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:projekt_zaliczeniowy/model/Album.dart';
 import 'package:projekt_zaliczeniowy/model/Photo.dart';
 import 'package:projekt_zaliczeniowy/widgets/AlbumWidget.dart';
 
-import '../model/Post.dart';
-import '../model/User.dart';
+import '../model/Album.dart';
 import '../widgets/Drawer.dart';
-import '../widgets/PostWidget.dart';
+import '../widgets/PhotoWidget.dart';
 
 class AlbumsScreen extends StatelessWidget {
-  const AlbumsScreen({super.key});
+  late Future<List<Album>> futurePhoto = Album.fetchAlbums();
+
+  AlbumsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: FlutterSocialAppDrawer(),
-    appBar: AppBar(
-    backgroundColor: Colors.blue, title: const Text("Album")),
-    body: AlbumWidget(
-    user: User(1, "Josef Bratan", "jozek", "email@moje.pl"),
-    album: Album(1, 1, "Tytul Albumu"),
-    photo: Photo(1, 1, "thumbnail", "url", "Tytul Zdjecia"))
-    
+        appBar:
+            AppBar(backgroundColor: Colors.blue, title: const Text("Albums")),
+        body: Center(
+            child: FutureBuilder<List<Album>>(
+                future: futurePhoto,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                      return AlbumWidget(album: snapshot.data![index]);
+                    });
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
 
-  );
-}}
+                  // By default, show a loading spinner.
+                  return const CircularProgressIndicator();
+                })));
+  }
+}
