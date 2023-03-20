@@ -4,18 +4,18 @@ import 'package:projekt_zaliczeniowy/model/Photo.dart';
 import 'package:projekt_zaliczeniowy/widgets/AlbumWidget.dart';
 
 import '../model/Album.dart';
-import '../widgets/Drawer.dart';
 import '../widgets/PhotoWidget.dart';
+import 'PostsScreen.dart';
 
 class AlbumsScreen extends StatelessWidget {
   late Future<List<Album>> futurePhoto = Album.fetchAlbums();
-
+  int _selectedIndex = 0;
   AlbumsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: FlutterSocialAppDrawer(),
+
         appBar:
             AppBar(backgroundColor: Colors.blue, title: const Text("Albums")),
         body: Center(
