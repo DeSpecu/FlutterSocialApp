@@ -1,16 +1,8 @@
-# projekt_zaliczeniowy
 
-Projekt Zaliczeniowy
+# Flutter Social App
 
-## Getting Started
+This app is based on JsonPlaceholder. It displays Albums, Photos and Posts from API. It can be connected with Firebase in order to add a login function.
+## Installation
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To run this project you have to add firebase. Create your own project and follow basic flutter configuration.
+    
