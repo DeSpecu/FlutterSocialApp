@@ -65,7 +65,7 @@ class PostWidget extends StatelessWidget {
                               );
                             });
                       },
-                      label: Text("Komentarze"),
+                      label: Text('Komentarze'),
                       icon: Icon(
                         Icons.comment,
                         color: Theme.of(context).colorScheme.onPrimary,

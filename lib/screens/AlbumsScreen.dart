@@ -15,9 +15,8 @@ class AlbumsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         appBar:
-            AppBar(backgroundColor: Colors.blue, title: const Text("Albums")),
+            AppBar(automaticallyImplyLeading: false, title: const Text("Albums")),
         body: Center(
             child: FutureBuilder<List<Album>>(
                 future: futurePhoto,

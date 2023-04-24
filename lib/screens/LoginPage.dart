@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:projekt_zaliczeniowy/screens/HomePage.dart';
 
 import 'PostsScreen.dart';
 
@@ -77,7 +78,7 @@ class _MyLoginPage extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PostsScreen()));
+                                  builder: (context) => HomePage()));
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
                             print('No user found for that email.');
@@ -95,7 +96,7 @@ class _MyLoginPage extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PostsScreen()));
+                                  builder: (context) => HomePage()));
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             print('The password provided is too weak.');

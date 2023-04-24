@@ -20,9 +20,9 @@ Future<void> main() async {
   );
 
   runApp(MaterialApp(
-    home: HomePage(),
+    home: const LoginPage(),
     routes: {
-      //"/": (context) => PostsScreen(),
+      "/homepage": (context) => HomePage(),
       //"/posts": (context) => PostsScreen(),
       "/photos": (context) => PhotoScreen(),
       "/album": (context) => AlbumsScreen()

@@ -14,7 +14,7 @@ class _HomePage extends State<HomePage> {
   PageController _pageController = PageController(initialPage: 0);
 
   final _bottomBarItems = [
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(Icons.list_sharp),
         label: "Posty",
         backgroundColor: Colors.pink),

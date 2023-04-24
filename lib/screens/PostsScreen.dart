@@ -18,11 +18,8 @@ class PostsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-
-      appBar: AppBar(backgroundColor: Colors.blue, title: const Text("Posty")),
-      //floatingActionButton: AddPost(),
+      appBar:
+        AppBar(automaticallyImplyLeading: false, title: const Text("Posts")),
       body: Center(
         child: FutureBuilder<List<Post>>(
           future: futurePost,
