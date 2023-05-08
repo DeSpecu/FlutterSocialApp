@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../model/Post.dart';
-import '../widgets/PostWidget.dart';
 
 class AddPost extends StatefulWidget {
   AddPost({super.key});

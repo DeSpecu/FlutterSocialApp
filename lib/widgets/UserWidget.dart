@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../model/Post.dart';
 import '../model/User.dart';
 
 class UserWidget extends StatelessWidget {

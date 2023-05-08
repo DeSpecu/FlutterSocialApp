@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:http/testing.dart';
 import 'package:projekt_zaliczeniowy/model/Album.dart';
-import 'package:projekt_zaliczeniowy/model/Comments.dart';
-import 'package:projekt_zaliczeniowy/model/Post.dart';
 import 'package:projekt_zaliczeniowy/model/User.dart';
 import 'package:projekt_zaliczeniowy/widgets/AlbumWidget.dart';
-import 'package:projekt_zaliczeniowy/widgets/CommentWidget.dart';
-import 'package:projekt_zaliczeniowy/widgets/PostWidget.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
   testWidgets('AlbumWidget displays albums', (WidgetTester tester) async {
-
-   
     final album = Album(
       1,
       1,
       'Test album title',
     );
+
+    final futureData = Future.value(User(1, "szymon", "specu", "mail@mail.com"));
+
+    // Build the widget without the future argument
+    final widget = AlbumWidget(album: album);
+
+    // Rebuild the widget when the future completes
+    await futureData.whenComplete(() => tester.pumpWidget(widget));
+
+    // Test the widget with the future data
+    expect(find.text('Hello, world!'), findsOneWidget);
 
     await tester.pumpWidget(MaterialApp(
         home: AlbumWidget(

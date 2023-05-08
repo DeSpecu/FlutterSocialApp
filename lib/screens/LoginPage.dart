@@ -1,9 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:projekt_zaliczeniowy/screens/HomePage.dart';
-
-import 'PostsScreen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

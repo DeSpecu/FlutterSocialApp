@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import '../model/Comments.dart';
 
 class CommentWidget extends StatelessWidget{

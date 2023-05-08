@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/AddPost.dart';
 import 'AlbumsScreen.dart';
 import 'PostsScreen.dart';

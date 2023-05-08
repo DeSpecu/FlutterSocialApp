@@ -1,15 +1,9 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../model/Post.dart';
-import '../widgets/AddPost.dart';
 import '../widgets/PostWidget.dart';
-import 'AlbumsScreen.dart';
-import 'PhotosScreen.dart';
 
 class PostsScreen extends StatelessWidget {
-
-  int _selectedIndex = 0;
 
   PostsScreen({super.key});
 

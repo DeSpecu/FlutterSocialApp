@@ -4,8 +4,6 @@ import 'package:projekt_zaliczeniowy/model/Comments.dart';
 import 'package:projekt_zaliczeniowy/model/Post.dart';
 import 'package:projekt_zaliczeniowy/widgets/CommentWidget.dart';
 import 'package:projekt_zaliczeniowy/widgets/UserWidget.dart';
-import '../main.dart';
-import '../model/User.dart';
 
 class PostWidget extends StatelessWidget {
   Post post;

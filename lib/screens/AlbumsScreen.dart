@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:projekt_zaliczeniowy/model/Photo.dart';
 import 'package:projekt_zaliczeniowy/widgets/AlbumWidget.dart';
-
 import '../model/Album.dart';
-import '../widgets/PhotoWidget.dart';
-import 'PostsScreen.dart';
 
 class AlbumsScreen extends StatelessWidget {
   late Future<List<Album>> futurePhoto = Album.fetchAlbums();

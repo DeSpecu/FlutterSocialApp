@@ -6,7 +6,7 @@ import 'package:projekt_zaliczeniowy/model/User.dart';
 import 'package:projekt_zaliczeniowy/widgets/CommentWidget.dart';
 
 void main() {
-  testWidgets('PostWidget displays post information and comments',
+  testWidgets('Comments Widget Test',
       (WidgetTester tester) async {
 
     final post = Post(
@@ -33,28 +33,12 @@ void main() {
       ),
     ];
 
-    // Build the PostWidget
     await tester.pumpWidget(MaterialApp(home: CommentWidget(comments[0])));
 
-    // Verify that the post information is displayed correctly
     expect(find.text(comments[0].body), findsOneWidget);
     expect(find.text(comments[0].name), findsOneWidget);
     expect(find.text(comments[0].email), findsOneWidget);
     expect(find.byType(Card), findsOneWidget);
     expect(find.byType(Column), findsWidgets);
-
-    // expect(find.text(post.body), findsOneWidget);
-    // expect(find.byType(UserWidget), findsOneWidget);
-
-    // Tap the "Komentarze" button to show the comments
-    // await tester.tap(find.text('Komentarze'));
-    // await tester.pumpAndSettle();
-
-    // Verify that the comments are displayed correctly
-    // expect(find.byType(CommentWidget), findsNWidgets(2));
-    // expect(find.text(comments[0].name), findsOneWidget);
-    // expect(find.text(comments[0].body), findsOneWidget);
-    // expect(find.text(comments[1].name), findsOneWidget);
-    // expect(find.text(comments[1].body), findsOneWidget);
   });
 }
