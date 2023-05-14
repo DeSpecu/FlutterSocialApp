@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:projekt_zaliczeniowy/screens/AlbumsScreen.dart';
 import 'package:projekt_zaliczeniowy/screens/HomePage.dart';
 import 'package:projekt_zaliczeniowy/screens/LoginPage.dart';
+import 'package:projekt_zaliczeniowy/screens/PhotosScreen.dart';
 import 'firebase_options.dart';
+
 
 Color randomColor() {
   var generatedColor = Random().nextInt(Colors.primaries.length);
@@ -21,7 +23,8 @@ Future<void> main() async {
     home: const LoginPage(),
     routes: {
       "/homepage": (context) => HomePage(),
-      "/album": (context) => AlbumsScreen()
+      "/album": (context) => AlbumsScreen(),
+      "/photos": (context) => PhotoScreen(),
     },
   ));
 }

@@ -11,6 +11,16 @@ buildscript {
         classpath 'com.google.gms:google-services:4.3.10'
         // END: FlutterFire Configuration
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // Import the BoM for the Firebase platform
+        implementation platform('com.google.firebase:firebase-bom:32.0.0')
+
+        // Add the dependency for the Performance Monitoring library
+        // When using the BoM, you don't specify versions in Firebase library dependencies
+        implementation 'com.google.firebase:firebase-perf'
+
+        // Add the dependency for the Performance Monitoring Gradle plugin
+        classpath 'com.google.firebase:perf-plugin:1.4.2'
     }
 }
 
@@ -19,6 +29,16 @@ allprojects {
         google()
         mavenCentral()
     }
+}
+
+plugins {
+    id 'com.android.application'
+
+    // Make sure that you have the Google services Gradle plugin
+    id 'com.google.gms.google-services'
+
+    // Add the Performance Monitoring Gradle plugin
+    id 'com.google.firebase.firebase-perf'
 }
 
 rootProject.buildDir = '../build'
